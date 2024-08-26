@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 2</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <form id="form2" action="" method="post">
+        <div>Name : 
+            <input type="text" name="name" id="name">
+            <span id="name-error"></span>
+        </div>
+        <div>Email : 
+            <input type="text" name="email" id="email">
+            <span id="email-error"></span>
+        </div>
+        <div>
+            Register number : 
+            <input type="text" name="rollno" id="rollno">
+            <span id="roll-error"></span>
+        </div>
+        <div>
+            Course
+            <select name="course" id="course">
+                <option value="">Select Course</option>
+                <option value="bca" >BCA</option>
+                <option value="bba">BBA</option>
+                <option value="bsc">Bsc Cs</option>
+                <option value="bcom">Bcom</option>
+            </select>
+            
+        </div>
+        <span id="course-error"></span>
+        <div>
+            Date of Admission :
+            <input type="date" name="aod" id="aod">
+            <span id="aod-error"></span>
+        </div>
+        <div>
+            <input type="button" value="Submit" onclick="validateform();" class="btn">
+        </div>
+    </form>
+
+    <script>
+        function validateform()
+        {
+            if (document.getElementById('name').value =='')
+        {
+            document.getElementById('name-error').innerHTML='fill out the field';
+            return false;
+        }
+        else if(document.getElementById('email').value =='')
+        {
+            document.getElementById('email-error').innerHTML='fill out the field';
+            return false;
+        }else if(document.getElementById('rollno').value =='')
+        {
+            document.getElementById('roll-error').innerHTML='fill out the field';
+            return false;
+        }else if(document.getElementById('course').value =='')
+        {
+            document.getElementById('course-error').innerHTML='fill out the field';
+            return false;
+        }else if(document.getElementById('aod').value =='')
+        {
+            document.getElementById('aod-error').innerHTML='fill out the field';
+            return false;
+        }
+        else{
+            document.getElementById('form2').submit();
+        }
+        }
+
+    </script>
+
+</body>
+</html>

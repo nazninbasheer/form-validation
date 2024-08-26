@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form 1</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        <form method="post" action="" id="form1" onsubmit="return validate();">
+            <div>
+                Name :  <input type="text" placeholder="name" id="name">
+                <span id="error-name"></span>
+            </div>
+            <div>
+                Email : 
+                <input type="text" placeholder="email" id="email">
+                <span id="error-email"></span>
+            </div>
+            <div>
+               Date of Birth : 
+                <input type="date" placeholder="DOB" id="dob">
+                <span id="error-dob"></span>
+            </div>
+            <div>
+              <label for="address">Address :</label> 
+                <textarea name="address" id="address" rows="4" placeholder="Address"></textarea>
+            <span id="error-address"></span>
+            </div>
+           <div>
+           Gender : 
+            <input type="radio" value="male" name="gender" id="gender"><label for="male">Male</label>
+            <input type="radio" value="female" name="gender" ><label for="female">Female</label>
+            <span id="error-gender"></span>
+        </div>
+            <div>
+              Languages Known :
+                <input type="checkbox" value="html" name="lang" id="html"><label for="html">HTML</label>
+                <input type="checkbox" value="css" name="lang" id="css"><label for="css">CSS</label>
+                <input type="checkbox" value="JavaScript" name="lang" id="JavaScript"><label for="JavaScript">JavaScript</label>
+                <input type="checkbox" value="java" name="lang" id="java"><label for="html">JAVA</label>
+                <input type="checkbox" value="python" name="lang" id="python"><label for="python">PYTHON</label>
+            </div>
+            <div>
+                <input type="submit" value="Submit" class="btn">
+            </div>
+        </form>
+        <script >
+            function validate()
+            {
+                if(document.getElementById('name').value=='')
+            {
+                document.getElementById('error-name').innerHTML = 'please fill out this';
+                return false;
+            }
+            else if(document.getElementById('email').value=='')
+            {
+                document.getElementById('error-email').innerHTML = 'please fill out this';
+                return false;
+            }
+             else if(document.getElementById('dob').value=='')
+            {
+                document.getElementById('error-dob').innerHTML = 'please fill out this';
+                return false;
+            }
+            else if(document.getElementById('address').value=='')
+            {
+                document.getElementById('error-address').innerHTML = 'please fill out this';
+                return false;
+            }
+            
+             else if(!document.querySelector('input[name="gender"]:checked'))
+            {
+                document.getElementById('error-gender').innerHTML = 'select one';
+                return false;
+            }
+            else{
+                return true;
+            }
+            }
+        </script>
+    </body>
+</html>
